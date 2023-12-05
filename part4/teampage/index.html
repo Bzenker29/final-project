@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Part 2: HTML and CSS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1 id="main-header"> Pick Your 5-A-Side Team </h1>
+        <div id="main-nav">
+            <div id="nav-toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul id="main-nav-items" class="hidden">
+                <li><a href="../index.html">About UEFA</a></li>
+                <li><a href="../statpage/index.html">Player Stats</a></li>
+                <li><a href="#">5-man Team</a></li>
+                <li><a href="../aboutpage/index.html">About UEFA</a></li>
+                <li><a href="../historypage/index.html">Competition History</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="main-content">
+        <div id="main-head">
+            <h2> Pick Your Team </h2>
+        </div>
+        <section id="columns">
+            <div class="c1o3" id="forwards">
+                <h3> Forwards </h3>
+                <h5> Pick Two Forwards To Add To Your Team </h5>
+                <!-- Text input for forwards -->
+                <div class="player-input">
+                    <input type="text" id="forwardPlayer1" placeholder="Enter Forward 1"><br>
+                    <input type="text" id="forwardPlayer2" placeholder="Enter Forward 2"><br>
+                    <!-- Add a submit button for forwards -->
+                    <button onclick="addPlayer('forwards')">Add Forward</button>
+                </div>
+            </div>
+            <div class="c1o3" id="mids">
+                <h3> Midfielders </h3>
+                <h5> Pick Two Midfielders To Add To Your Team </h5>
+                <!-- Text input for midfielders -->
+                <div class="player-input">
+                    <input type="text" id="midfieldPlayer1" placeholder="Enter Midfielder 1"><br>
+                    <input type="text" id="midfieldPlayer2" placeholder="Enter Midfielder 2"><br>
+                    <!-- Add a submit button for midfielders -->
+                    <button onclick="addPlayer('midfielders')">Add Midfielder</button>
+                </div>
+            </div>
+            <div class="c1o3" id="goalies">
+                <h3> Goalie </h3>
+                <h5> Pick One Goalie To Add To Your Team </h5>
+                <!-- Text input for goalie -->
+                <div class="player-input">
+                    <input type="text" id="goaliePlayer" placeholder="Enter Goalie"><br>
+                    <!-- Add a submit button for goalies -->
+                    <button onclick="addPlayer('goalies')">Add Goalie</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Submit Team button -->
+        <button onclick="submitTeam()">Submit Team</button>
+
+        <!-- Display selected players -->
+        <div id="selected-players"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
