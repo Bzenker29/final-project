@@ -1,28 +1,29 @@
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
-const postRouter = require('./postRouter'); // Import the postRouter
 
 const app = express();
 
-app.use(express.json());
-app.use('/api', postRouter); // Mount the postRouter at /api
+// Set up MongoDB connection
+const mongoURI = 'mongodb+srv://Cluster50738:space@cluster50738.tlt566q.mongodb.net/?retryWrites=true&w=majority';
+mongoose.connect(mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.once('open', () => {
+  console.log('Connected to MongoDB!');
+});
 
-// Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
+// Set the directory where your website files are located
+const websiteDirectory = path.join(__dirname, 'your_website_directory');
 
-// Connect to MongoDB
-mongoose.connect('mongodb+srv://Cluster50738:space@cluster50738.tlt566q.mongodb.net/?retryWrites=true&w=majority', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
-    .then(() => {
-        console.log('Connected to MongoDB');
-    })
-    .catch(err => console.error('Error connecting to MongoDB:', err));
+// Serve static files
+app.use(express.static(websiteDirectory));
 
-const PORT = 3000;
-
+// Start the server
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
