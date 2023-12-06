@@ -1,8 +1,12 @@
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
+const postRouter = require('./postRouter'); // Import the postRouter
 
 const app = express();
+
+app.use(express.json());
+app.use('/api', postRouter); // Mount the postRouter at /api
 
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
