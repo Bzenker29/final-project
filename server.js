@@ -4,26 +4,23 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-// Set up MongoDB connection
-const mongoURI = 'mongodb+srv://Cluster50738:space@cluster50738.tlt566q.mongodb.net/?retryWrites=true&w=majority';
-mongoose.connect(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-db.once('open', () => {
-  console.log('Connected to MongoDB!');
-});
+app.use(express.json());
 
-// Set the directory where your website files are located
-const websiteDirectory = path.join(__dirname, 'your_website_directory');
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Serve static files
-app.use(express.static(websiteDirectory));
+// Connect to MongoDB
+mongoose.connect('mongodb+srv://Cluster50738:space@cluster50738.tlt566q.mongodb.net/?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+    .then(() => {
+        console.log('Connected to MongoDB');
+    })
+    .catch(err => console.error('Error connecting to MongoDB:', err));
 
-// Start the server
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
+
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });

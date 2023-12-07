@@ -123,6 +123,35 @@ body {
     }
 }
 
+/* Medium Resolutions */
+@media (min-width: 600px) and (max-width: 899px) { 
+    #main-content {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .c1o3 {
+        flex: none; /* Remove flex-grow so they don't stretch */
+        width: calc(100% - 20px); /* Adjust width to maintain spacing and borders */
+        margin: 15px auto; /* Center with margin instead of flex */
+    }
+}
+
+/* Small Resolutions */
+@media (max-width: 599px) { 
+    #main-content {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .c1o3 {
+        flex: none; /* Remove flex-grow so they don't stretch */
+        width: calc(100% - 20px); /* Adjust width to maintain spacing and borders */
+        margin: 15px auto; /* Center with margin instead of flex */
+    }
+}
+
+/* Additional styles you provided previously */
 #winner-image {
     display: flex;
     flex-direction: column;

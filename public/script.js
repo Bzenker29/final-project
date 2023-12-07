@@ -1,3 +1,12 @@
+const toggleNav = () => {
+    document.getElementById("main-nav-items").classList.toggle("hidden");
+};
+
+
+window.onload = () => {
+    document.getElementById("nav-toggle").onclick = toggleNav;
+};
+
 document.addEventListener("DOMContentLoaded", function () {
     const contactForm = document.getElementById("contact-form");
     const successMessage = document.getElementById("success-message");
