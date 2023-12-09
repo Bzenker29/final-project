@@ -18,7 +18,7 @@ const getSoccerData = async () => {
 
         // Add some margin to separate soccer items
         if (index > 0) {
-            section.style.marginTop = "20px"; // Adjust this value as needed
+            section.style.marginTop = "10px"; // Adjust this value as needed
         }
 
         const a = document.createElement("a");
