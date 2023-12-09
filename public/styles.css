@@ -1,6 +1,6 @@
 :root {
     --primary: rgb(0, 0, 0);
-    --secondary: #7494EA;
+    --secondary: #5AA9E6;
 }
 
 /* Navigation */
@@ -73,6 +73,7 @@ body {
 }
 
 #add-link {
+    margin: 4px 0;
     font-size: 3em;
     border: solid 2px black;
 }
@@ -136,7 +137,7 @@ label {
 .close {
     color: black;
     float: right;
-    font-size: 28px;
+    font-size: 40px;
     font-weight: bold;
     padding: 0px 5px;
 }

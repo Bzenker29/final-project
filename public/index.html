@@ -16,23 +16,16 @@
                 <div></div>
             </div>
             <ul id="main-nav-items" class="hidden">
-                <li><a href="../index.html">About UEFA</a></li>
+                <li><a href="../teampage/index.html">About UEFA</a></li>
                 <li><a href="../statpage/index.html">Player Stats</a></li>
                 <li><a href="#">Favorite Team</a></li>
                 <li><a href="../aboutpage/index.html">About UEFA</a></li>
                 <li><a href="../historypage/index.html">Competition History</a></li>
             </ul>
         </nav>
-        <a href="#" id="add-link">+</a>
-    
-    <div class="columns two-columns">
-        <div id="soccer-list" class="columns"></div>
-        <div id="soccer-details-column">
-            <h2>Details</h2>
+    </header>
 
-            <div id="soccer-details"></div>
-        </div>
-    </div>
+        <a href="#" id="add-link">+</a>
     <div id="add-edit-soccer-container" class="dialog transparent">
         <span class="close">&times;</span>
 
@@ -47,21 +40,27 @@
                 <label for="description">Description:</label>
                 <input type="text" id="description" name="description" required />
             </p>
-
-            <p>
-                <label for="img">Upload Image:</label>
-                <input type="file" id="img" name="img" />
-            </p>
-
             <p id="players-p ">
                 <label class="inline">Players:</label>
                 <a href="#" id="add-player">Add Player</a>
                 <section id="player-boxes"></section>
             </p>
             <p>
+                <label for="img">Upload Image:</label>
+                <input type="file" id="img" name="img" />
+            </p>
+            <p>
                 <button type="submit">Submit</button>
             </p>
         </form>
+    </div>
+    <div class="columns two-columns">
+        <div id="soccer-list" class="columns"></div>
+        <div id="soccer-details-column">
+            <h2>Here is the team details:</h2>
+
+            <div id="soccer-details"></div>
+        </div>
     </div>
 </body>
 
