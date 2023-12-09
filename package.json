@@ -1,8 +1,21 @@
 {
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.2",
+    "joi": "^17.11.0",
     "mongodb": "^6.3.0",
     "mongoose": "^8.0.2",
+    "multer": "^1.4.5-lts.1",
     "node": "^21.2.0"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "final-project",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

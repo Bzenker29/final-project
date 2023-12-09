@@ -1,77 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <title>Part 2: HTML and CSS</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <head> 
+        <title>Part 2: HTML and CSS</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
 
-<body>
-    <header>
-        <h1 id="main-header">Pick Your 5-A-Side Team</h1>
-        <nav id="main-nav">
-            <div id="nav-toggle">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <ul id="main-nav-items" class="hidden">
-                <li><a href="../index.html">About UEFA</a></li>
-                <li><a href="../statpage/index.html">Player Stats</a></li>
-                <li><a href="#">5-man Team</a></li>
-                <li><a href="../aboutpage/index.html">About UEFA</a></li>
-                <li><a href="../historypage/index.html">Competition History</a></li>
-            </ul>
-        </nav>
-    </header>
+   
+    <body>
+        <header>
+            <h1 id="main-header"> The UEFA Champions League </h1>
+            <nav id="main-nav">
+                <div id="nav-toggle">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <ul id="main-nav-items" class="hidden">
+                    <li><a href="#">About UEFA</a></li>
+                    <li><a href="../statpage/index.html">Player Stats</a></li>
+                    <li><a href="../index.html">5-man Team</a></li>
+                    <li><a href="../aboutpage/index.html">About UEFA</a></li>
+                    <li><a href="../historypage/index.html">Competition History</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section id="main-content"> 
 
-    <section id="main-content">
-        <div id="main-head">
-            <h2>Pick Your Team</h2>
-        </div>
-        <section id="columns">
-            <div class="c1o3" id="forwards">
-                <h3>Forwards</h3>
-                <h5>Pick Two Forwards To Add To Your Team</h5>
-                <!-- Text input for forwards -->
-                <div class="player-input">
-                    <input type="text" id="forwardPlayer1" placeholder="Enter Forward 1"><br>
-                    <input type="text" id="forwardPlayer2" placeholder="Enter Forward 2"><br>
-                    <!-- Add a submit button for forwards -->
-                    <button onclick="addPlayer('forwards')">Add Forward</button>
-                </div>
+            <h4 id="iframe-header">Location of the Final</h4>
+
+            <div id="iframe-container">
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12455.358352102108!2d28.762510841021598!3d41.07400339442699!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa76153854ef9%3A0xb0284d3f86c83cfb!2sAtat%C3%BCrk%20Olympic%20Stadium!5e0!3m2!1sen!2sus!4v1698244642986!5m2!1sen!2sus" 
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
             </div>
-            <div class="c1o3" id="mids">
-                <h3>Midfielders</h3>
-                <h5>Pick Two Midfielders To Add To Your Team</h5>
-                <!-- Text input for midfielders -->
-                <div class="player-input">
-                    <input type="text" id="midfieldPlayer1" placeholder="Enter Midfielder 1"><br>
-                    <input type="text" id="midfieldPlayer2" placeholder="Enter Midfielder 2"><br>
-                    <!-- Add a submit button for midfielders -->
-                    <button onclick="addPlayer('midfielders')">Add Midfielder</button>
-                </div>
+            <div>
+                <h2 id="content-header"> Upcoming Schedule </h2>
             </div>
-            <div class="c1o3" id="goalies">
-                <h3>Goalie</h3>
-                <h5>Pick One Goalie To Add To Your Team</h5>
-                <!-- Text input for goalie -->
-                <div class="player-input">
-                    <input type="text" id="goaliePlayer" placeholder="Enter Goalie"><br>
-                    <!-- Add a submit button for goalies -->
-                    <button onclick="addPlayer('goalies')">Add Goalie</button>
+            <div id="column">
+                <div class="c1o4">
+                    <h4>Tuesday, October 24th, 2023</h4>
+                    <p> Inter v. Salzburg </p>
+                    <p> Galatasaray v. Bayern Munich </p>
+                    <p> Sevilla v. Arsenal </p>
+                    <p> Sporting Braga v. Real Madrid </p>
                 </div>
+                <div class="c1o4">
+                    <h4>Tuesday, October 24th, 2023</h4>
+                    <p> Manchester United v. Kobenhavn </p>
+                    <p> Benfica v. Real Sociedad </p>
+                    <p> Lens v. PSV </p>
+                    <p> FC Union Berlin v. Napoli </p>
+                </div>
+                <div class="c1o4">
+                    <h4>Wednesday, October 25th, 2023</h4>
+                    <p> Feyenoord v. Lazio </p>
+                    <p> Barcelona v. Shakhtar Donetsk </p>
+                    <p> Paris v. AC Milan </p>
+                    <p> Young Boys v. Manchester City </p>
+                </div>
+                <div class="c1o4">
+                    <h4>Wednesday, October 25th, 2023</h4>
+                    <p> Celtic v. Atletico Madrid </p>
+                    <p> Newcastle United v. Borussia Dortmund </p>
+                    <p> RB Leipzig v. Crvena Zvezda </p>
+                    <p> Royal Antwerp v. Porto </p>
+                </div>
+
             </div>
+            <div id="contact">
+                <h1>Contact Us</h1>
+                    <form id="contact-form">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <button type="submit">Submit</button>
+
+                        <input type="hidden" id="recipient-email" name="recipient-email" value="b_rad21146@yahoo.com">
+
+                    </form>
+
+                    <div id="success-message">Message sent successfully!</div>
+                    <div id="error-message">Error sending message. Please try again.</div>
+                
+            </div>
+
+
+
+
+
+
         </section>
+        <script src="script.js"></script>
 
-        <!-- Submit Team button -->
-        <button onclick="submitTeam()">Submit Team</button>
+    </body>
 
-        <!-- Display selected players -->
-        <div id="selected-players"></div>
-    </section>
 
-    <script src="script.js"></script>
-</body>
 
 </html>

@@ -1,188 +1,134 @@
-/* Structure */ 
-
-header {
-    background-color: #5AA9E6;
-    width: 90%;
-    margin: auto;
-    padding: 10px;
-    border: solid 2px black;
-
-}
-#main-header {
-    margin: auto;
-    text-align: center;
+:root {
+    --primary: coral;
+    --secondary: cornflowerblue;
 }
 
-#main-nav-items a {
-    text-decoration: none;
-    color: black;
-}
-
-#main-nav-items li {
-    list-style: none;
-    text-align: center;
-    border: solid 2px black;
-    padding: 5px;
-}
-
-#main-nav-items {
-    padding: 20px;
-    margin: auto;
-    padding-left: 0;
-}
-
-#holder-img {
-    display: block;
-    align-items: center;
-    margin: auto;
-    padding: 20px;
-}
-
-#content-header,
-#iframe-header {
-    width: 90%;
-    background-color: #5AA9E6;
-    text-align: center;
-    margin:  8px auto;
-    padding: 10px;
-    border: solid 2px black;
-
-}
-
+/* General styles */
 body {
-    background-color: #7494EA;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: azure;
 }
 
-#column {
-    width: 90%;
-    margin: auto;
-    padding: 20px;
-}
-
-.c1o4 {
-    text-align: center;
-    background-color: #5AA9E6;
-    border: solid 2px black;
-}
-
-#contact {
-    background-color: #5AA9E6;
-    margin: auto;
-    padding: 15px;
-    border: solid 2px black;
-}
-
-#contact h1 {
-    text-align: center;
-}
-
-#success-message,
-#error-message {
-    display: none;
-    margin-top: 10px;
+#soccer-list,
+#soccer-details-column {
     padding: 10px;
-    text-align: center;
-    font-weight: bold;
-    border: solid 2px black;
-
+    margin: 10px;
+    background: var(--secondary);
+    border-radius: 5px;
 }
 
-#success-message {
-    background-color: chocolate;
-    color: white;
+#add-link {
+    font-size: 2em;
+    border: 1px solid var(--primary);
 }
 
-#error-message {
-    background-color: chocolate;
-    color: white;
+#add-edit-soccer-container {
+    padding: 10px;
+    margin: 10px;
+    background: var(--secondary);
+    border-radius: 5px;
 }
 
-/* Centering the iframe */
-#iframe-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 450px; 
-    margin: 10px auto;
-    padding: 20px;
-}
-
-iframe {
-    
-    border: none;
-    width: 80%;
-    height: 100%; 
-}
-
-
-/* Form elements */
-
-#contact-form {
-    width: 50%;
-    margin: 0 auto;
-}
-
-#contact-form label {
+/* Form */
+label {
     display: block;
-    text-align: center; 
 }
 
-#contact-form input[type="text"],
-#contact-form input[type="email"],
-#contact-form textarea {
+.inline {
+    display: inline;
+}
+
+#players-p input {
+    margin-top: 5px;
+}
+
+#add-player {
+    color: darkblue;
+    font-size: 0.75em;
+    text-align: right;
+}
+
+/* Modal Dialog */
+#modal-background {
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
     width: 100%;
-    box-sizing: border-box;
-    margin: 10px auto;
+    height: 100%;
+    overflow: scroll;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-
-/* Navigation */
-
-#nav-toggle div {
-    width: 35px;
-    height: 5px;
-    background-color: black;
-    margin: 6px 0;
+/* Modal Content */
+.dialog {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%;
 }
 
-#main-nav ul {
-    padding-left: 0px;
-    list-style-type: none;
+.dialog img {
+    max-width: fit-content;
+    display: block;
+    padding: 30px 5px 30px 30px;
+    margin: auto;
 }
 
-#main-nav li {
-    padding: 6px;
-    margin: 6px;
-    text-align: center;
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 0px 5px;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Soccer Items */
+.columns .soccer-item {
+    margin-bottom: 20px; /* Adjust this value as needed */
+    width: 100%; /* Ensure soccer items take full width */
+    display: block; /* Ensure they stack on top of each other */
+}
+
+/* Typography */
+a {
+    text-decoration: none;
+    color: var(--primary);
 }
 
 .hidden {
     display: none;
 }
 
-
-
-
-/* Typography */
-
-body {
-    font-family:Arial, Helvetica, sans-serif
+.transparent {
+    opacity: 0;
 }
 
 /* Larger Resolutions */
-@media (min-width: 900px) {
-    #column, 
-    #main-nav-items {
+@media (min-width: 600px) {
+    .columns {
         display: flex;
+        flex-wrap: wrap;
     }
-    
-    .c1o4, 
-    #main-nav-items li {
-    flex: 1;
+    .two-columns div {
+        flex: 1;
     }
-
-    #nav-toggle {
-        display: none;
+    #soccer-list,
+    #soccer-details-column {
+        width: 48%;
     }
-    
+    #add-edit-soccer-container {
+        max-width: 30%;
+        margin: auto;
     }
+}
