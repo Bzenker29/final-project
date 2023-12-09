@@ -1,12 +1,66 @@
 :root {
-    --primary: coral;
-    --secondary: cornflowerblue;
+    --primary: rgb(0, 0, 0);
+    --secondary: #7494EA;
 }
 
+/* Navigation */
+
+#nav-toggle div {
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+}
+
+#main-nav ul {
+    padding-left: 0px;
+    list-style-type: none;
+}
+
+#main-nav li {
+    padding: 6px;
+    margin: 6px;
+    text-align: center;
+}
+
+
 /* General styles */
+
+header {
+    background-color: #5AA9E6;
+    margin: auto;
+    padding: 10px;
+    border: solid 2px black;
+}
+
+#main-header {
+    margin: auto;
+    text-align: center;
+}
+
+#main-nav-items a {
+    text-decoration: none;
+    color: black;
+}
+
+#main-nav-items li {
+    list-style: none;
+    text-align: center;
+    border: solid 2px black;
+    padding: 5px;
+}
+
+#main-nav-items {
+    padding: 20px;
+    margin: auto;
+    padding-left: 0;
+}
+
+
+
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: azure;
+    background-color: #7494EA;
 }
 
 #soccer-list,
@@ -15,11 +69,12 @@ body {
     margin: 10px;
     background: var(--secondary);
     border-radius: 5px;
+    border: solid 2px black;
 }
 
 #add-link {
-    font-size: 2em;
-    border: 1px solid var(--primary);
+    font-size: 3em;
+    border: solid 2px black;
 }
 
 #add-edit-soccer-container {
@@ -43,7 +98,7 @@ label {
 }
 
 #add-player {
-    color: darkblue;
+    color: black;
     font-size: 0.75em;
     text-align: right;
 }
@@ -66,7 +121,7 @@ label {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: solid 2px black;
     width: 100%;
 }
 
@@ -79,7 +134,7 @@ label {
 
 /* The Close Button */
 .close {
-    color: #aaaaaa;
+    color: black;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -95,9 +150,9 @@ label {
 
 /* Soccer Items */
 .columns .soccer-item {
-    margin-bottom: 20px; /* Adjust this value as needed */
-    width: 100%; /* Ensure soccer items take full width */
-    display: block; /* Ensure they stack on top of each other */
+    margin-bottom: 20px; 
+    width: 100%; 
+    display: block; 
 }
 
 /* Typography */
@@ -115,12 +170,14 @@ a {
 }
 
 /* Larger Resolutions */
-@media (min-width: 600px) {
-    .columns {
+@media (min-width: 900px) {
+    .columns,
+    #main-nav-items {
         display: flex;
         flex-wrap: wrap;
     }
-    .two-columns div {
+    .two-columns div,
+    #main-nav-items li {
         flex: 1;
     }
     #soccer-list,
@@ -131,4 +188,11 @@ a {
         max-width: 30%;
         margin: auto;
     }
+
+
+
+    #nav-toggle {
+        display: none;
+    }
+
 }

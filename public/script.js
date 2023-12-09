@@ -197,7 +197,13 @@ const getSoccerData = async () => {
     input.type = "text";
     section.append(input);
   };
-  
+
+
+  const toggleNav = () => {
+    document.getElementById("main-nav-items").classList.toggle("hidden");
+};
+
+
   window.onload = () => {
     showSoccerData();
     document.getElementById("add-edit-soccer-form").onsubmit = addEditSoccerItem;
@@ -208,5 +214,8 @@ const getSoccerData = async () => {
     };
   
     document.getElementById("add-player").onclick = addPlayer;
+
+    document.getElementById("nav-toggle").onclick = toggleNav;
   };
+  
   
